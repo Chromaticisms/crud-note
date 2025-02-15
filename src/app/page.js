@@ -26,7 +26,7 @@ export default async function Page() {
             );
           })}
           <form
-            className="h-40 grid grid-rows-4 grid-cols-1 gap-2 justify-between h-40"
+            className="grid grid-rows-4 grid-cols-1 gap-2 justify-between h-40"
             action={createData}
           >
             <input

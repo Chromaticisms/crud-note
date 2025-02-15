@@ -7,7 +7,7 @@ export default async function Page({ params }) {
   console.log({ id });
   return (
     <>
-      <div className="flex justify-center items-center text-3xl font-bold m-6 border border-gray-400 m-0 p-10">
+      <div className="flex justify-center items-center text-3xl font-bold border border-gray-400 m-0 p-10">
         {data.name}
       </div>
       <div className="flex justify-center items-center text-xl m-6">
