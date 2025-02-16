@@ -1,17 +1,27 @@
+import { API } from "@/components/constants";
+import Link from "next/link";
+
 export default async function Page({ params }) {
   const { id } = await params;
-  const res = await fetch(
-    `https://v1.appbackend.io/v1/rows/TSzlyseyFjVt/${id}`
-  );
+  const res = await fetch(`${API}/${id}`);
   const data = await res.json();
-  console.log({ id });
   return (
     <>
-      <div className="flex justify-center items-center text-3xl font-bold border border-gray-400 m-0 p-10">
-        {data.name}
-      </div>
-      <div className="flex justify-center items-center text-xl m-6">
-        {data.content}
+      <div className="m-2">
+        <div className="flex flex-col justify-start items-center">
+          <div className="rounded-lg m-2 text-4xl text-center w-2/3 outline-none">
+            {data.name}
+          </div>
+          <div className="rounded-lg m-2 text-lg w-2/3 text-center outline-none">
+            {data.content}
+          </div>
+          <Link
+            href={`./${id}/edit`}
+            className="rounded-lg bg-yellow-200 border border-yellow-500 px-4 py-1 text-2xl font-bold text-yellow-600 m-2"
+          >
+            Edit
+          </Link>
+        </div>
       </div>
     </>
   );

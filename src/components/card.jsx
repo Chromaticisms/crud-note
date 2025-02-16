@@ -10,17 +10,15 @@ export const Card = ({ title, description, id }) => {
             {title}
           </div>
         </Link>
-        <div className="text-justify m-2 overflow-hidden text-ellipsis max-h-24">
+        <div className="text-justify m-2 overflow-hidden text-ellipsis">
           {description}
         </div>
-        <div className="col-span-2 row-span-1 grid grid-rows-1 grid-cols-2 h-full gap-2">
-          <form action={deleteData}>
-            <input name="id" type="text" defaultValue={id} hidden />
-            <button className="bg-red-100 text-red-600 font-bold text-xs rounded-md border-2 border-red-500 p-1 absolute bottom-2 right-2">
-              Delete
-            </button>
-          </form>
-        </div>
+        <form action={deleteData}>
+          <input name="id" type="text" defaultValue={id} hidden />
+          <button className="bg-red-100 text-red-600 font-bold text-xs rounded-md border-2 border-red-500 p-1 absolute bottom-2 right-2">
+            Delete
+          </button>
+        </form>
       </div>
     </>
   );

@@ -1,9 +1,9 @@
+"use server";
+
 import { revalidatePath } from "next/cache";
 import { API } from "@/components/constants";
 
 export const deleteData = async (formData) => {
-  "use server";
-
   const id = formData.get("id");
 
   await fetch(API, {
